@@ -3,8 +3,19 @@ export class Article {
     title:string;
     link:string;
   
-    constructor() { 
-      this.title="angular";
-      this.title="http:/angular.io"; 
-      this.votes=10;
+    constructor(title:string, link:string, votes?:number) { 
+      this.title=title;
+      this.link=link; 
+      this.votes=votes || 10;
+    }
+    voteUp():boolean {
+        this.votes ++;
+        return false;
+      }
+      
+      voteDown():boolean {
+        this.votes --;
+        return false;
+      }
+
 }
