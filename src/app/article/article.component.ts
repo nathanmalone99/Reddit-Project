@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Article } from './article.model';
 
 @Component({
@@ -8,10 +8,10 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
 
- article:Article;
+ @Input() article:Article;
 
   constructor() { 
-    this.article = new Article("Angular","http://angular.io",10);
+    //this.article = new Article("Angular","http://angular.io",10);
   
   }
 
@@ -19,12 +19,12 @@ export class ArticleComponent implements OnInit {
   }
 
 voteUp() {
-  this.article.voteUp;
+  this.article.voteUp();
   return false;
 }
 
 voteDown() {
-  this.article.voteDown;
+  this.article.voteDown();
   return false;
 }
 
